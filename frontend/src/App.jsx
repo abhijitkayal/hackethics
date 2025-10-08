@@ -17,51 +17,19 @@ import LoginPage from "./pages/login";
 import SignupPage from "./pages/signup";
 
 function App() {
-  return (<>
-    {/* <Navbar/> */}
-    {/* <main class="container py-5">
-      <Herosection/>
-      <Courses/>
-      <Features/>
-      <OsintAndAI/>
-      <Testimonials/>
-      <Dashboard/>
-      <Gpt/>
-    </main>
-    <Footer/> */}
-    
-      <Routes>
-        <Route path="/" element={<><Navbar/> <Herosection/> <Footer/></>} /> 
-      </Routes>
-      <Routes>
-        <Route path="/courses" element={ <><Navbar/> <Courses/> <Footer/></>} /> 
-      </Routes>
-      <Routes>
-        <Route path="/features" element={ <><Navbar/> <Features/> <Footer/></>} /> 
-      </Routes>
-      <Routes>
-        <Route path="/osinttool" element={ <><Navbar/> <OsintAndAI/> <Footer/></>} /> 
-      </Routes>
-      <Routes>
-        <Route path="/testimonials" element={ <><Navbar/><Testimonials/> <Footer/></>} /> 
-      </Routes>
-      <Routes>
-        <Route path="/contact" element={ <><Navbar/> <Contact/> <Footer/></>} /> 
-      </Routes>
-      <Routes>
-        <Route path="/gpt" element={<><Navbar/> <Gpt/> <Footer/></> } /> 
-      </Routes>
-      <Routes>
-        <Route path="/dashboard" element={<><Navbar/> <Dashboard/> <Footer/></> } /> 
-      </Routes>
-      <Routes>
-        <Route path="/login" element={ <LoginPage/>} /> 
-      </Routes>
-      <Routes>
-        <Route path="/signup"  element={ <SignupPage/>} /> 
-      </Routes>
-    
-    </>
+  return (
+    <Routes>
+      <Route path="/" element={<><Navbar/> <Herosection/> <Footer/></>} /> 
+      <Route path="/courses" element={<><Navbar/> <Courses/> <Footer/></>} /> 
+      <Route path="/features" element={<><Navbar/> <Features/> <Footer/></>} /> 
+      <Route path="/osinttool" element={<><Navbar/> <OsintAndAI/> <Footer/></>} /> 
+      <Route path="/testimonials" element={<><Navbar/> <Testimonials/> <Footer/></>} /> 
+      <Route path="/contact" element={<><Navbar/> <Contact/> <Footer/></>} /> 
+      <Route path="/gpt" element={<><Navbar/> <Gpt/> <Footer/></>} /> 
+      <Route path="/dashboard" element={<><Navbar/> <Dashboard/> <Footer/></>} /> 
+      <Route path="/login" element={<LoginPage/>} /> 
+      <Route path="/signup" element={<SignupPage/>} /> 
+    </Routes>
   );
 }
 export default App;

@@ -1158,8 +1158,9 @@ const Courses = () => {
 
 
   return (
-    <section id="courses" className="pt-3 pb-5">
-      <div className="d-flex justify-content-between align-items-center mb-1">
+    <section id="courses" className="py-5">
+      <div className="container">
+        <div className="d-flex justify-content-between align-items-center mb-1">
         <h2>Courses & Prices</h2>
         <div className="small-muted">
           Choose a plan and apply coupon at checkout
@@ -1399,6 +1400,7 @@ const Courses = () => {
           </div>
         </div>
       )}
+      </div>
     </section>
   );
 };

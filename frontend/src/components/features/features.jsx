@@ -96,28 +96,59 @@ const QuoteModal = () => {
   if (loading) return <Animation />;
 
   return (
-    <>
-      <h1 className="font-bold text-black flex justify-center items-center pt-10 pb-0">
-        Our Services
-      </h1>
+    <section id="services" className="py-5">
+      <div className="container">
+        <h2>Our Services</h2>
 
-    <div className="lg:flex block">
-        <div className="col-md-4 mt-5 px-3">
-          <div className="card p-3 h-100">
-            <h5>Incident Response — Rapid</h5>
-            <div className="price">₹49,999</div>
-            <p className="small-muted">
-              24/7 rapid response & forensic snapshot
-            </p>
-            <button
-              className="btn btn-primary mt-2"
-              onClick={() => openQuote("Incident Response - Rapid", 49999)}
-            >
-              Request Quote
-            </button>
+        <div className="row g-4">
+          <div className="col-md-4">
+            <div className="card p-3 h-100">
+              <h5>Incident Response — Rapid</h5>
+              <div className="price">₹49,999</div>
+              <p className="small-muted">
+                24/7 rapid response & forensic snapshot
+              </p>
+              <button
+                className="btn btn-primary mt-2"
+                onClick={() => openQuote("Incident Response - Rapid", 49999)}
+              >
+                Request Quote
+              </button>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <div className="card p-3 h-100">
+              <h5>Penetration Testing</h5>
+              <div className="price">₹79,999</div>
+              <p className="small-muted">
+                Comprehensive security assessment & vulnerability analysis
+              </p>
+              <button
+                className="btn btn-primary mt-2"
+                onClick={() => openQuote("Penetration Testing", 79999)}
+              >
+                Request Quote
+              </button>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <div className="card p-3 h-100">
+              <h5>Security Consulting</h5>
+              <div className="price">₹99,999</div>
+              <p className="small-muted">
+                Expert guidance on cybersecurity strategy & implementation
+              </p>
+              <button
+                className="btn btn-primary mt-2"
+                onClick={() => openQuote("Security Consulting", 99999)}
+              >
+                Request Quote
+              </button>
+            </div>
           </div>
         </div>
-     
 
       {showModal && (
         <div
@@ -195,201 +226,9 @@ const QuoteModal = () => {
           </div>
         </div>
       )}
-      {/* <div className="lg:flex block"> */}
-        <div className="col-md-4 mt-5 px-3">
-          <div className="card p-3 h-100">
-            <h5>Incident Response — Rapid</h5>
-            <div className="price">₹49,999</div>
-            <p className="small-muted">
-              24/7 rapid response & forensic snapshot
-            </p>
-            <button
-              className="btn btn-primary mt-2"
-              onClick={() => openQuote("Incident Response - Rapid", 49999)}
-            >
-              Request Quote
-            </button>
-          </div>
-        </div>
-      {/* </div> */}
-
-      {showModal && (
-        <div
-          className="modal fade show"
-          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.5)" }}
-        >
-          <div className="modal-dialog modal-lg modal-dialog-scrollable">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Request quote — {service}</h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={() => setShowModal(false)}
-                ></button>
-              </div>
-              <div className="modal-body">
-                {!submitted ? (
-                  <>
-                    <p>
-                      <strong>{service}</strong> — Price:{" "}
-                      <strong>₹{price}</strong>
-                    </p>
-                    <div className="mb-2">
-                      <label className="form-label">Name</label>
-                      <input
-                        name="name"
-                        className="form-control"
-                        value={form.name}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="mb-2">
-                      <label className="form-label">Email</label>
-                      <input
-                        name="email"
-                        type="email"
-                        className="form-control"
-                        value={form.email}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="mb-2">
-                      <label className="form-label">Details</label>
-                      <textarea
-                        name="msg"
-                        className="form-control"
-                        rows="3"
-                        value={form.msg}
-                        onChange={handleChange}
-                      ></textarea>
-                    </div>
-                  </>
-                ) : (
-                  <p>
-                    Thanks <strong>{form.name}</strong>, payment received.
-                    Confirmation sent to <strong>{form.email}</strong>.
-                  </p>
-                )}
-              </div>
-              <div className="modal-footer">
-                {!submitted && (
-                  <button className="btn btn-primary" onClick={sendQuote}>
-                    Pay & Confirm
-                  </button>
-                )}
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => setShowModal(false)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-  {/* <div className="lg:flex block"> */}
-        <div className="col-md-4 mt-5 px-3">
-          <div className="card p-3 h-100">
-            <h5>Incident Response — Rapid</h5>
-            <div className="price">₹49,999</div>
-            <p className="small-muted">
-              24/7 rapid response & forensic snapshot
-            </p>
-            <button
-              className="btn btn-primary mt-2"
-              onClick={() => openQuote("Incident Response - Rapid", 49999)}
-            >
-              Request Quote
-            </button>
-          </div>
-        </div>
-      {/* </div> */}
-
-      {showModal && (
-        <div
-          className="modal fade show"
-          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.5)" }}
-        >
-          <div className="modal-dialog modal-lg modal-dialog-scrollable">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Request quote — {service}</h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={() => setShowModal(false)}
-                ></button>
-              </div>
-              <div className="modal-body">
-                {!submitted ? (
-                  <>
-                    <p>
-                      <strong>{service}</strong> — Price:{" "}
-                      <strong>₹{price}</strong>
-                    </p>
-                    <div className="mb-2">
-                      <label className="form-label">Name</label>
-                      <input
-                        name="name"
-                        className="form-control"
-                        value={form.name}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="mb-2">
-                      <label className="form-label">Email</label>
-                      <input
-                        name="email"
-                        type="email"
-                        className="form-control"
-                        value={form.email}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="mb-2">
-                      <label className="form-label">Details</label>
-                      <textarea
-                        name="msg"
-                        className="form-control"
-                        rows="3"
-                        value={form.msg}
-                        onChange={handleChange}
-                      ></textarea>
-                    </div>
-                  </>
-                ) : (
-                  <p>
-                     Thanks <strong>{form.name}</strong>, payment received.
-                    Confirmation sent to <strong>{form.email}</strong>.
-                  </p>
-                )}
-              </div>
-              <div className="modal-footer">
-                {!submitted && (
-                  <button className="btn btn-primary" onClick={sendQuote}>
-                    Pay & Confirm
-                  </button>
-                )}
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => setShowModal(false)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-       </div>
-    
-      
-    </>
+      </div>
+    </section>
   );
 };
 
 export default QuoteModal;
-
-

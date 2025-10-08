@@ -43,12 +43,13 @@ const Dashboard = () => {
   return (
     <>
       <section id="dashboard" className="py-5">
-        <div className="d-flex justify-content-between align-items-center mb-3">
-          <h2>Dashboard</h2>
-          <div className="small-muted">Your enrollments & invoices</div>
-        </div>
+        <div className="container">
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <h2>Dashboard</h2>
+            <div className="small-muted">Your enrollments & invoices</div>
+          </div>
 
-        <div className="row g-3 d-flex align-items-stretch">
+          <div className="row g-3 d-flex align-items-stretch">
           <div className="col-md-4">
             <div className="card p-3">
               <h6>Your profile</h6>
@@ -126,6 +127,7 @@ const Dashboard = () => {
               )}
             </div>
           </div>
+        </div>
         </div>
       </section>
 

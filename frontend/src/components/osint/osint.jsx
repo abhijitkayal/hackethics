@@ -79,9 +79,10 @@ const OsintAndAI = () => {
 };
 
   return (
-    <section className="py-5">
-      <h2 className="mb-3">OSINT Tools (React Demo)</h2>
-      <div className="row g-3">
+    <section id="osint" className="py-5">
+      <div className="container">
+        <h2>OSINT Tools (Demo)</h2>
+        <div className="row g-3">
       
         <div className="col-md-6">
           <div className="card p-3">
@@ -203,7 +204,7 @@ const OsintAndAI = () => {
             </div>
           </div>
         </div>
-
+      </div>
       </div>
     </section>
   );

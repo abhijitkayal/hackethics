@@ -4,8 +4,9 @@ const TestimonialsAndFAQ = () => {
   return (
     <>
       <section id="testimonials" className="py-5">
-        <h2>What Our Learners Say</h2>
-        <div className="row g-3 d-flex align-items-stretch">
+        <div className="container">
+          <h2>What Our Learners Say</h2>
+          <div className="row g-3 d-flex align-items-stretch">
           <div className="col-md-6">
             <div className="testimonial">
               “The Beginner OSINT course gave me hands-on skills I could use in
@@ -18,12 +19,14 @@ const TestimonialsAndFAQ = () => {
               are gold.” — <strong>Sara</strong>
             </div>
           </div>
+          </div>
         </div>
       </section>
 
-      <section id="faq" className="py-5">
-        <h2>FAQ</h2>
-        <div className="accordion" id="faqAccordion">
+      <section id="faq" className="py-5 bg-light">
+        <div className="container">
+          <h2>FAQ</h2>
+          <div className="accordion" id="faqAccordion">
           <div className="accordion-item">
             <h2 className="accordion-header" id="faqHeading1">
               <button
@@ -74,6 +77,7 @@ const TestimonialsAndFAQ = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </>

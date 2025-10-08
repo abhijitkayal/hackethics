@@ -98,30 +98,29 @@ const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="container">
-           <section id="home" className="hero">
-      <div className="container">
         <div className="row align-items-center">
-        
           <div className="col-lg-7">
-            <h1 className="display-5">
+            <h1 className="display-5 fw-bold" style={{color: 'var(--text)'}}>
               Practical, ethical OSINT & Cybersecurity learning — with hands-on
               projects
             </h1>
-            <p className="lead muted">
+            <p className="lead" style={{color: 'var(--muted)'}}>
               Courses, tools and services tailored for learners and teams. Prices
               shown in <strong>INR (₹)</strong>.
             </p>
             <div className="d-flex gap-2 flex-wrap">
-              <p className="btn btn-light btn-lg btn-cta"
-              onClick={() => handleProtectedClick(openCourses)}
+              <button 
+                className="btn btn-light btn-lg btn-cta"
+                onClick={() => handleProtectedClick(openCourses)}
               >
                 <i className="bi bi-journal-bookmark me-1"></i> View Courses
-              </p>
-              <p className="btn btn-light btn-lg btn-cta"
-               onClick={() => handleProtectedClick(openFeature)}
+              </button>
+              <button 
+                className="btn btn-light btn-lg btn-cta"
+                onClick={() => handleProtectedClick(openFeature)}
               >
                 <i className="bi bi-gear me-1"></i> Services & Pricing
-              </p>
+              </button>
             </div>
             <p className="mt-3 small-muted">
               This site follows the structure you provided in the uploaded PDF (OSINT disclaimers included).
@@ -242,8 +241,6 @@ const Hero = () => {
             </div>
           </div>
         )}
-      </div>
-    </section>
       </div>
     </section>
   );

@@ -49,9 +49,10 @@ const AiAgent = () => {
 };
 
   return (
-    <section id="ai" className="py-5">
-      <h2>AI Agent (Mock)</h2>
-      <div className="row g-3 d-flex align-items-stretch">
+    <section id="ai" className="py-5 bg-light">
+      <div className="container">
+        <h2>AI Agent (Mock)</h2>
+        <div className="row g-3 d-flex align-items-stretch">
       
         <div className="col-md-6">
           <div className="card p-3">
@@ -106,6 +107,7 @@ const AiAgent = () => {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
