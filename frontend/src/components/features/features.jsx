@@ -106,7 +106,7 @@ const QuoteModal = () => {
               <h5>Incident Response — Rapid</h5>
               <div className="price">₹49,999</div>
               <p className="small-muted">
-                24/7 rapid response & forensic snapshot
+                24/7 rapid response & forensic snapshot full support
               </p>
               <button
                 className="btn btn-primary mt-2"

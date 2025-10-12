@@ -51,11 +51,18 @@ const EnrollAndFooter = () => {
         </div>
       </div>
 
-      <footer className="bg-dark text-white text-center py-3 mt-5">
+      {/* <footer className="bg-dark text-white text-center py-3 mt-5">
         <div className="container">
           <p className="mb-0 small">
             © 2025 Hackethics138 — Cybersecurity Education Platform · Prices shown in INR (₹). Use responsibly.
           </p>
+        </div>
+      </footer>
+      */}
+
+       <footer className="fixed bottom-0 left-0 w-full text-white text-center py-3 bg-dark ">
+        <div className="text-sm">
+          © 2025 Hackethicks — Prototype · Prices shown in INR (₹). Use responsibly.
         </div>
       </footer>
     </>
