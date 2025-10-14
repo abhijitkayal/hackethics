@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Animation from "../animation/bg_animation";
+import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 
 const OsintAndAI = ({userEmail}) => {
   const [mobile, setMobile] = useState("");
@@ -136,6 +138,8 @@ useEffect(() => {
  
 }, [])
 
+  const { isSignedIn } = useUser();
+  const navigate = useNavigate();
 
 
 
@@ -155,14 +159,14 @@ useEffect(() => {
         <div className="col-md-6">
           <div className="card p-3 shadow-sm">
             <h6>Mobile Lookup</h6>
-            <form onSubmit={(e) => handleOSINT(e, "mobile")}>
+            <form >
               <input
                 className="form-control mb-2"
                 placeholder="+91 98765 43210"
                 value={mobile}
                 onChange={(e) => setMobile(e.target.value)}
               />
-              <button className="btn btn-outline-primary" >Lookup</button>
+              <button className="btn btn-outline-primary" onClick={(e) =>isSignedIn?handleOSINT(e, "mobile"):navigate("/login")}>Lookup</button>
             </form>
             {loadingMobile ? (
               <div>Fetching...</div>
@@ -177,14 +181,14 @@ useEffect(() => {
         <div className="col-md-6">
           <div className="card p-3 shadow-sm">
             <h6>Instagram Lookup</h6>
-            <form onSubmit={(e) => handleOSINT(e, "insta")}>
+            <form>
               <input
                 className="form-control mb-2"
                 placeholder="username"
                 value={insta}
                 onChange={(e) => setInsta(e.target.value)}
               />
-              <button className="btn btn-outline-primary">Lookup</button>
+              <button className="btn btn-outline-primary" onClick={(e) =>isSignedIn?handleOSINT(e, "insta"):navigate("/login")}>Lookup</button>
             </form>
             {loadingInsta ? (
               <div>Fetching...</div>
@@ -199,14 +203,14 @@ useEffect(() => {
         <div className="col-md-6">
           <div className="card p-3 shadow-sm">
             <h6>Adhaar Lookup</h6>
-            <form onSubmit={(e) => handleOSINT(e, "adhaar")}>
+            <form >
               <input
                 className="form-control mb-2"
                 placeholder="1111 2222 3333"
                 value={adhaar}
                 onChange={(e) => setAdhaar(e.target.value)}
               />
-              <button className="btn btn-outline-primary">Lookup</button>
+              <button className="btn btn-outline-primary" onClick={(e) =>isSignedIn?handleOSINT(e, "adhaar"):navigate("/login")}>Lookup</button>
             </form>
             {loadingAdhaar ? (
               <div>Fetching...</div>
@@ -221,14 +225,14 @@ useEffect(() => {
         <div className="col-md-6">
           <div className="card p-3 shadow-sm">
             <h6>Email Lookup</h6>
-            <form onSubmit={(e) => handleOSINT(e, "mail")}>
+            <form >
               <input
                 className="form-control mb-2"
                 placeholder="user@example.com"
                 value={mail}
                 onChange={(e) => setMail(e.target.value)}
               />
-              <button className="btn btn-outline-primary">Lookup</button>
+              <button className="btn btn-outline-primary" onClick={(e) =>isSignedIn?handleOSINT(e, "mail"):navigate("/login")}>Lookup</button>
             </form>
             {loadingMail ? (
               <div>Fetching...</div>
@@ -264,7 +268,8 @@ useEffect(() => {
               <ol>✔ Priority Support</ol>
             </ul>
             <button
-              onClick={() =>handlePayment(199,"monthly")}
+              // onClick={() =>handlePayment(199,"monthly")}
+               onClick={() =>isSignedIn?handlePayment(199,"monthly"):navigate("/login")}
               className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700" 
             >
               Choose Monthly
@@ -281,7 +286,8 @@ useEffect(() => {
               <ol>✔ Save ₹889 yearly</ol>
             </ul>
             <button
-              onClick={() =>handlePayment(1499,"yearly")}
+              // onClick={() =>handlePayment(1499,"yearly")}
+               onClick={() =>isSignedIn?handlePayment(1499,"yearly"):navigate("/login")}
               className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700"
             >
               Choose Yearly

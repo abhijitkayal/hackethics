@@ -9,6 +9,10 @@ const QuoteModal = () => {
   const [price, setPrice] = useState(0);
   const [form, setForm] = useState({ name: "", email: "", msg: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [emailError,setEmailError]=useState("");
+  
+  
+   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
@@ -48,6 +52,13 @@ const QuoteModal = () => {
     alert("Please fill out your name and email.");
     return;
   }
+   if (!validateEmail(form.email)) {
+      setEmailError("Please enter a valid email address");
+      return;
+    } else {
+      setEmailError("");
+    }
+
 
   const isLoaded = await loadRazorpayScript();
   if (!isLoaded) {
@@ -56,7 +67,7 @@ const QuoteModal = () => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/create-order", {
+    const res = await fetch("http://localhost:5000/order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: price, currency: "INR" }),
@@ -183,13 +194,15 @@ const QuoteModal = () => {
                     </div>
                     <div className="mb-2">
                       <label className="form-label">Email</label>
-                      <input
-                        name="email"
-                        type="email"
-                        className="form-control"
-                        value={form.email}
-                        onChange={handleChange}
-                      />
+                        <input
+                      name="email"
+                      type="email"
+                      className="form-control"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                    />
+                    {emailError && <small className="text-danger">{emailError}</small>}
                     </div>
                     <div className="mb-2">
                       <label className="form-label">Details</label>

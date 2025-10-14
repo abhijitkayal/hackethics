@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const EnrollAndFooter = () => {
   const [enrolledCourses] = useState([
@@ -9,9 +10,9 @@ const EnrollAndFooter = () => {
 
   return (
     <>
-      <a href="#courses" className="btn btn-primary btn-lg sticky-cta">
+      <Link to="/courses" className="btn btn-primary btn-lg sticky-cta">
         <i className="bi bi-lightning-fill"></i> Enroll Now
-      </a>
+      </Link>
 
     
       <div
